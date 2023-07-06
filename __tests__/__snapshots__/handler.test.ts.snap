@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`handler allLogoIcons returns all logo icon file names in the logo icons directory without the filename extension 1`] = `
+{
+  "body": "["1+1 Loans","118 118","Abound","Aqua","Asda","BT group","Bank of Ireland","Barclaycard","Barclays","Believe Loans","Capital One","Car Finance 247","Cashplus","Finio Loans","Fluid","Fluro","GuarantorMyLoan","Hastings Direct","Luma","MBNA","Marbles","O2","Ocean Finance","Octopus Energy","Plusnet","Post Office","RBS","Santander","Selina","Shawbrook Bank","Sky","TalkTalk","Tesco Bank","Thames Water","The AA","Three","Virgin Media","Vodafone","Zable","Zuto","admiral","american express","anglian water","atom","bamboo","bank of america","british gas","bulb","chase","citi bank","clearpay","clearscore","co-operative bank","coventry building society","credit karma","credit suisse","edf energy","ee limited","first direct","goldman sachs","halifax","hsbc","investec","klarna","laybuy","lendable","lloyds","marks and spencer","metro","monzo","morgan stanley","nationwide","natwest","oaknorth bank","ratesetter","revolut","sainsbury","scottish power","shawbrook","shop direct","standard chartered","starling","thinkmoney","totallymoney","transunion","triodos","vanquis bank","virgin money","wise","yorkshire building society","yorkshire water","zilch","zopa"]",
+  "headers": {
+    "Access-Control-Allow-Origin": "*",
+  },
+  "statusCode": 200,
+}
+`;

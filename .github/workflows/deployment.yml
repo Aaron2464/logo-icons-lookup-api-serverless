@@ -1,0 +1,46 @@
+name: Deployment
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy-stage:
+    runs-on: ubuntu-latest
+    environment:
+      name: stage
+      url: https://cqmom4cptk.execute-api.eu-west-1.amazonaws.com/stage/
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
+      - uses: serverless/github-action@v3.1
+        with:
+          args: deploy --stage stage
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
+
+  deploy-production:
+    needs: [deploy-stage]
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://rqz10ptwi9.execute-api.eu-west-1.amazonaws.com/prod/
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: 'npm'
+      - run: npm ci
+      - uses: serverless/github-action@v3.1
+        with:
+          args: deploy --stage prod
+        env:
+          AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
+          AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}

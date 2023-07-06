@@ -1,0 +1,55 @@
+service: sls-logo-icons-lookup-api
+frameworkVersion: '3'
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: eu-west-1
+  stage: ${opt:stage, 'stage'}
+  apiGateway:
+    binaryMediaTypes:
+      - '*/*'
+
+custom:
+  esbuild:
+    external:
+      - sharp
+    packagerOptions:
+      scripts:
+        - rm -rf node_modules/sharp
+        - npm install --platform=linux --arch=x64 sharp
+
+package:
+  patterns:
+    - './logoIcons'
+
+functions:
+  allLogoIcons:
+    handler: handler.allLogoIcons
+    events:
+      - http:
+          path: /all_logo_icons
+          method: GET
+          cors: true
+
+  lookupLogoIcon:
+    handler: handler.lookupLogoIcon
+    events:
+      - http:
+          path: /lookup_logo_icon
+          method: GET
+          cors: true
+          caching:
+            enabled: true
+            cacheKeyParameters:
+              - name: request.querystring.logoIconName
+              - name: request.querystring.size
+          request:
+            parameters:
+              querystrings:
+                logoIconName: true
+                size: false
+
+plugins:
+  - serverless-api-gateway-caching
+  - serverless-esbuild
