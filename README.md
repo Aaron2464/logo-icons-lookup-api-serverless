@@ -1,7 +1,7 @@
 # Welcome to Logo Icons Lookup API Serverless 👋
 
 [![serverless](http://public.serverless.com/badges/v3.svg)](http://www.serverless.com)
-[![Tests](https://github.com/mediaingenuity/Serverless.Logo.Icons.Lookup.Api/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/mediaingenuity/Serverless.Logo.Icons.Lookup.Api/actions/workflows/tests.yml)
+[![Tests](https://github.com/frubesss/logo-icons-lookup-api-serverless/actions/workflows/tests.yml/badge.svg?branch=main)](https://github.com/frubesss/logo-icons-lookup-api-serverless/actions/workflows/tests.yml)
 
 > This API allows users to find logo icons based on string pattern matching. 
 > This is useful when you only have a partial match of the logos name and need 
