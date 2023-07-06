@@ -19,7 +19,7 @@
     "prettier": "2.8.8",
     "serverless": "^3.33.0",
     "serverless-api-gateway-caching": "^1.10.1",
-    "serverless-esbuild": "^1.45.0",
+    "serverless-esbuild": "^1.45.1",
     "ts-jest": "^29.1.1",
     "typescript": "^5.1.6",
     "sharp-cli": "^4.1.1"
