@@ -45,7 +45,7 @@
 
 #### Request
 
-`GET` - `https://rqz10ptwi9.execute-api.eu-west-1.amazonaws.com/prod/all_logo_icons`
+`GET` - `/all_logo_icons`
 
 #### Response
 
@@ -84,7 +84,7 @@
 
 #### Request
 
-`GET` - `https://rqz10ptwi9.execute-api.eu-west-1.amazonaws.com/prod/lookup_logo_icon?logoIconName=monzo bank&size=50`
+`GET` - `/lookup_logo_icon?logoIconName=monzo bank&size=50`
 
 #### Response
 
